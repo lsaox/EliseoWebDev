@@ -35,7 +35,8 @@
   <img src="assets/logo.png" alt="Eliseo Web Dev Logo" id="logo" />
   <h1 id="brandText">Eliseo Web Dev</h1>
 </div>
-
+  <!-- Site-Pet script -->
+ 
 <!-- Styles -->
 <style>
   #introSplash {
@@ -93,8 +94,30 @@
       height: 60px;
     }
   }
+  #petjs-canvas {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 150px;
+      height: 150px;
+      z-index: 11000;
+      background: transparent;
+      pointer-events: auto;
+    }
 </style>
-
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background: black;
+    }
+    .site-pet {
+      position: fixed !important;
+      bottom: 10px !important;
+      right: 10px !important;
+      z-index: 11000 !important;
+    }
+  </style>
 <!-- Script -->
 <script>
   window.addEventListener('load', () => {
@@ -283,7 +306,7 @@
 
       <!-- Image -->
       <div class="mb-4" data-aos="zoom-in" data-aos-delay="100">
-        <img src="assets/Untitled design (76).png" alt="Highest End Creation" class="img-fluid rounded shadow-lg" style="max-height: 500px; width: 100%; object-fit: cover;" />
+        <img src="assets/Untitled design (77).png" alt="Highest End Creation" class="img-fluid rounded shadow-lg" style="max-height: 500px; width: 100%; object-fit: cover;" />
       </div>
 
       <!-- Description Text -->
@@ -394,6 +417,9 @@
       </div>
     </div>
   </footer>
+
+
+  
 <script>
   $(document).ready(function(){
     $('.services-slider').slick({
@@ -433,6 +459,19 @@
       easing: 'ease-in-out',
     });
   </script>
-
+<!-- PetJS Dog Mascot -->
+<canvas id="petjs-canvas" style="position: fixed; bottom: 10px; right: 10px; z-index: 11000; width: 150px; height: 150px;"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/petjs@latest/dist/pet.min.js"></script>
+<script>
+  const pet = new Pet({
+    type: 'dog',      // you can also use 'cat'
+    canvasId: 'petjs-canvas',
+    width: 150,
+    height: 150,
+    x: window.innerWidth - 160,
+    y: window.innerHeight - 160,
+  });
+  pet.run();
+</script>
 </body>
 </html>
