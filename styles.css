@@ -253,13 +253,7 @@ video::-webkit-media-controls-start-playback-button {
   object-fit: cover;
 }p {
   text-align: center;
-}.video-background video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -1;
-  pointer-events: none; /* Prevent taps */
+}video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
 }
