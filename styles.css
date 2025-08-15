@@ -1,0 +1,244 @@
+body {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  padding: 2rem;
+}
+
+.small-title {
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+/* Titles */
+.main-title {
+  font-weight: 50;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 8rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Responsive Text Sizes */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2rem;
+  }
+}
+/* Navbar font override to serious/minimal font */
+.navbar, .navbar a, .navbar-nav .nav-link {
+  font-family:  'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+  text-transform: none; /* remove uppercase if needed */
+}.navbar {
+  border-bottom: none !important;
+  box-shadow: none !important;
+
+  margin-top: 40px; /* Adjust as needed (px, %, etc.) */
+}/* Video background container */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
+}
+
+/* Video styles */
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Black overlay on top of video */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.938); /* Adjust opacity as needed */
+  z-index: -1;
+}
+/* Video background */
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -2;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
+
+/* Overlay above video, behind text */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.705); /* Adjust opacity */
+  z-index: -1;
+}
+
+/* Hero Section */
+.hero-section {
+  height: 100vh;
+  padding: 2rem;
+  z-index: 1;
+  position: relative;
+}
+
+/* Titles */
+.small-title {
+  font-size: 0.9rem;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+.main-title {
+  font-weight: 50;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 8rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Responsive font */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Button responsiveness */
+@media (max-width: 768px) {
+  .hero-section .btn {
+    display: block;
+    width: 100%;
+    margin: 0 auto 1rem auto;
+  }
+
+  .hero-section .btn:last-child {
+    margin-bottom: 0;
+  }
+}.discover-intro {
+  background-color: #000000; /* or #000 for full black */
+  color: #fff;
+}
+
+.discover-intro h2 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.discover-intro p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+}@media (min-width: 992px) and (max-width: 1399.98px) {
+  .main-title {
+    font-size: 5rem;
+  }
+
+  .hero-section {
+    padding-top: 5rem;
+    height: auto; /* more flexibility than 100vh */
+    min-height: 90vh;
+  }
+
+  .hero-section .btn {
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}.shift-section {
+  height: 100vh;
+  padding: 0 1rem;
+}.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 350px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.image-box:hover .gallery-img {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.356);
+}.gallery-img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 350px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+
+}
+.image-box:hover .gallery-img {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(255, 255, 255, 0.288);
+}footer a:hover {
+  color: #999;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand {
+  padding: 0 !important;
+  margin: 0 !important;
+}.lead {
+  margin-left: -10px; /* Adjust this value to move the content left */
+}
+.about-img-wrapper {
+  border: 1px solid rgba(255, 255, 255, 0.05); /* barely visible */
+  border-radius: 8px;
+  box-shadow: 
+    0 1px 2px rgba(255, 255, 255, 0.05),
+    2px 2px 4px rgba(255, 255, 255, 0.03),
+    -1px -1px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.about-img-wrapper:hover {
+  transform: translateY(-4px);
+}

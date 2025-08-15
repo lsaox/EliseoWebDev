@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio | Eliseo Web Dev</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Video Background Hero */
+    .hero-video-container {
+      position: relative;
+      height: 70vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-video-container video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      filter: brightness(0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      padding: 0 15px;
+    }
+
+    .lead,
+    p.lead,
+    .fs-5 {
+      font-size: 0.875rem;
+      color: #ccc;
+    }
+
+    /* Portfolio Image Styles */
+    .gallery-img {
+      border-radius: 0.5rem;
+      box-shadow: 0 8px 24px rgb(0 0 0 / 0.5);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgb(255 255 255 / 0.7);
+      z-index: 10;
+      position: relative;
+    }
+
+    /* Button Style */
+    .btn-outline-light {
+      border-color: #fff;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #fff;
+      color: #000;
+      border-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark fixed-top" style="margin-top:40px;">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/logo.png" alt="Eliseo Web Dev" height="50" />
+    </a>
+    <button
+      class="btn btn-outline-light d-lg-none"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#mobileMenu"
+      aria-controls="mobileMenu"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="d-none d-lg-flex mx-auto">
+      <ul class="navbar-nav d-flex flex-row justify-content-center">
+        <li class="nav-item mx-3"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="index.html#about">About</a></li>
+        <li class="nav-item mx-3"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item mx-3"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Offcanvas Mobile Menu -->
+<div class="offcanvas offcanvas-start bg-black text-white" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header border-bottom border-secondary">
+    <h5 class="offcanvas-title">Menu</h5>
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+      <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+      <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Spacer for fixed navbar -->
+<div style="margin-top: 100px;"></div>
+
+<!-- Hero Section with Video Background -->
+<section class="hero-video-container">
+  <video autoplay muted loop playsinline>
+    <source src="assets/hero-video.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content" data-aos="fade-up" data-aos-duration="1200">
+    <h1 class="display-4 fw-bold mb-3">Portfolio</h1>
+    <p class="lead mx-auto" style="max-width: 800px;">
+      Explore some of the high‑end builds crafted for detailers, brands, and business owners who value precision, elegance, and performance. Each project is built from scratch with the client’s vision in mind — no templates, no shortcuts.
+    </p>
+  </div>
+</section>
+
+<!-- Portfolio Section -->
+<section class="py-5 bg-black text-center text-white">
+  <div class="container" data-aos="fade-up" data-aos-delay="200">
+    <!-- Responsive Image Grid -->
+    <div class="row row-cols-1 row-cols-md-3 justify-content-center g-4 mb-4">
+      <div class="col" data-aos="zoom-in" data-aos-delay="300">
+        <img src="assets/d2.png" alt="High‑End Work 1" class="img-fluid gallery-img" />
+      </div>
+      <div class="col" data-aos="zoom-in" data-aos-delay="400">
+        <img src="assets/d3.png" alt="High‑End Work 2" class="img-fluid gallery-img" />
+      </div>
+      <div class="col" data-aos="zoom-in" data-aos-delay="500">
+        <img src="assets/d4.png" alt="High‑End Work 3" class="img-fluid gallery-img" />
+      </div>
+      <div class="col" data-aos="zoom-in" data-aos-delay="600">
+        <img src="assets/d5.png" alt="High‑End Work 4" class="img-fluid gallery-img" />
+      </div>
+      <div class="col" data-aos="zoom-in" data-aos-delay="700">
+        <img src="assets/d7.png" alt="High‑End Work 5" class="img-fluid gallery-img" />
+      </div>
+    </div>
+
+    <div class="mt-5" data-aos="fade-up" data-aos-delay="800">
+      <p class="fs-5 mx-auto" style="max-width: 750px;">
+        Whether you're just starting or scaling your business, I work with you one‑on‑one to build a site that reflects quality and trust. If you're looking for a website that stands out and elevates your brand—this is it.
+      </p>
+      <a href="contact.html" class="btn btn-outline-light btn-lg mt-3">Let's Build Yours</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white py-4">
+  <div class="container text-center">
+    <img src="assets/logo.png" alt="Eliseo Web Dev" height="50" class="mb-2" />
+    <p class="mb-2 small">&copy; 2025 Eliseo Web Dev. All rights reserved.</p>
+    <div class="d-flex justify-content-center gap-4">
+      <a href="mailto:eliseowebdev@gmail.com" class="text-white text-decoration-none">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="tel:682-215-3934" class="text-white text-decoration-none">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="https://www.instagram.com/eliseowebdev" target="_blank" class="text-white text-decoration-none">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    easing: 'ease-in-out',
+  });
+</script>
+
+</body>
+</html>

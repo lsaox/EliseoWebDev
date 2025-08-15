@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom Coded Websites</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&display=swap" rel="stylesheet" />
+<!-- Slick CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<!-- Slick JS -->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+
+<!-- Intro Splash -->
+<div id="introSplash" aria-label="Intro splash screen with logo and brand name">
+  <img src="assets/logo.png" alt="Eliseo Web Dev Logo" id="logo" />
+  <h1 id="brandText">Eliseo Web Dev</h1>
+</div>
+
+<!-- Styles -->
+<style>
+  #introSplash {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Orbitron', monospace, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1050;
+  }
+
+  #introSplash img,
+  #introSplash h1 {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+
+  #introSplash h1 {
+    font-size: 3rem;
+    margin-top: 20px;
+    animation-delay: 0.6s;
+  }
+
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Fade out the entire splash */
+  .fade-out {
+    animation: fadeOutSplash 0.5s ease forwards;
+  }
+
+  @keyframes fadeOutSplash {
+    to {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    #introSplash h1 {
+      font-size: 2rem;
+    }
+
+    #introSplash img {
+      height: 60px;
+    }
+  }
+</style>
+
+<!-- Script -->
+<script>
+  window.addEventListener('load', () => {
+    const splash = document.getElementById('introSplash');
+
+    // Wait until fade-in finishes + pause, then fade out
+    setTimeout(() => {
+      splash.classList.add('fade-out');
+    }, 2200); // total time: 0.6s logo + 0.6s text + 1s pause
+
+    // Remove splash from DOM after fade out
+    setTimeout(() => {
+      splash.remove();
+    }, 2800);
+  });
+</script>
+
+<body class="bg-black text-white">
+
+  <nav class="navbar navbar-dark fixed-top " style="margin-top:40px;">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="assets/logo.png" alt="Eliseo Web Dev" height="50">
+      </a>
+      <button class="btn btn-outline-light d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="d-none d-lg-flex mx-auto">
+        <ul class="navbar-nav d-flex flex-row justify-content-center">
+          <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="100"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="200"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="300"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="400"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Offcanvas Mobile Menu -->
+  <div class="offcanvas offcanvas-start bg-black text-white" tabindex="-1" id="mobileMenu">
+    <div class="offcanvas-header border-bottom border-secondary">
+      <h5 class="offcanvas-title">Menu</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Video Background -->
+  <div class="video-background">
+    <video autoplay muted loop playsinline>
+      <source src="assets/hero.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section d-flex align-items-center justify-content-center text-center">
+    <div>
+      <div class="small-title mb-3" data-aos="fade-up">From Entrepreneurs to Enterprises</div>
+      <h1 class="main-title mb-0" data-aos="fade-up" data-aos-delay="100">CUSTOM CODED</h1>
+      <h1 class="main-title" data-aos="fade-up" data-aos-delay="200">WEBSITES</h1>
+      <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
+        <a href="#about" class="btn btn-outline-light btn-lg me-3">Learn More</a>
+        <a href="contact.html" class="btn btn-light btn-lg text-black">Build a Website</a>
+      </div>
+    </div>
+  </section>
+<style>
+  p,
+  p.lead,
+  .fs-5 {
+    font-size: 0.875rem;
+  }
+</style>
+  <!-- Highest End Creations Section -->
+
+
+
+<!-- About Section -->
+<section id="about" class="py-5 bg-black text-white">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Left: Image with 3D effect -->
+      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+        <div class="about-img-wrapper shadow-3d">
+          <img src="assets/Modern program user interface laptop mockup instagram post portrait (1).png" alt="About Eliseo" class="img-fluid rounded" style="width: 100%; height: auto;">
+        </div>
+      </div>
+
+      <!-- Right: Text -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <h2 class="fw-bold display-5 mb-3">About Me</h2>
+        <p class="lead text-secondary">
+          Hello my name is Eliseo. Im a fulltime independant Web Developer and I craft high-performance websites from the ground up — no templates, no shortcuts.
+           Every line of code and every pixel is purpose-built to reflect your brand's essence.          
+
+        </p>
+        
+        <a href="#portfolio" class="btn btn-outline-light btn-lg mt-3">See My Work</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Three Steps Section – Large Format -->
+<section class="py-6 bg-black text-white">
+  <div class="container-lg px-4">
+
+    <!-- Step 1 -->
+    <div class="row align-items-center mb-5" data-aos="fade-up">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="fw-bold mb-3 display-5">Step 1: Discovery & Planning</h2>
+        <p class="lead">
+          We begin by understanding your goals, audience, and vision. Whether you're launching or scaling, the blueprint is always custom-made for your brand’s DNA.
+        </p>
+        <a href="#contact" class="btn btn-outline-light btn-sm ms-3">Contact Me</a>
+      </div>
+      <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="100">
+        <img src="assets/wiref.png" alt="Step 1" class="img-fluid rounded shadow-lg" style="max-height: 500px; width: 100%; object-fit: cover;">
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="row align-items-center flex-lg-row-reverse mb-5" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="fw-bold mb-3 display-5">Step 2: Design & Build</h2>
+        <p class="lead">
+          Every line of code and pixel is tailored for performance. No templates, no shortcuts—just clean, handcrafted design.
+        </p>
+      </div>
+      <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="200">
+        <img src="assets/Digital Consulting (9).png" alt="Step 2" class="img-fluid rounded shadow-lg" style="max-height: 500px; width: 100%; object-fit: cover;">
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="row align-items-center" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h2 class="fw-bold mb-3 display-5">Step 3: Launch & Refine</h2>
+        <p class="lead">
+          After testing and refinement, your site launches fully optimized and future-ready. Free domain included.
+        </p>
+      </div>
+      <div class="col-lg-6 text-center" data-aos="zoom-in" data-aos-delay="300">
+        <img src="assets/Untitled design (75).png" alt="Step 3" class="img-fluid rounded shadow-lg" style="max-height: 500px; width: 100%; object-fit: cover;">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <section class="hero-section d-flex align-items-center justify-content-center text-center bg-black text-white">
+    <div>
+      <!-- Heading -->
+      <h1 class="main-title mb-4" data-aos="fade-up">Highest End Creations</h1>
+
+      <!-- Image -->
+      <div class="mb-4" data-aos="zoom-in" data-aos-delay="100">
+        <img src="assets/Untitled design (76).png" alt="Highest End Creation" class="img-fluid rounded shadow-lg" style="max-height: 500px; width: 100%; object-fit: cover;" />
+      </div>
+
+      <!-- Description Text -->
+      <p class="lead mb-4 px-3 px-md-5" data-aos="fade-up" data-aos-delay="200">
+        Designed with precision and built without compromise. These creations represent the pinnacle of custom-coded design, tailored exclusively for elite brands and bold visions. Whether its Web Development, Digitital Marketing, or SEO Optimization, I got you covered.
+      </p>
+
+      <!-- CTA Button -->
+      <div data-aos="fade-up" data-aos-delay="300">
+        <a href="#contact" class="btn btn-outline-light btn-lg">Inquire</a>
+      </div>
+    </div>
+  </section>
+  <!-- Image Trio Section -->
+
+
+  <!-- Testimonials Section -->
+  <section class="py-6 bg-black text-white" style="padding-top: 40px;"> 
+    <div class="container" data-aos="fade-up">
+      <h2 class="text-center display-5 fw-bold mb-5">What Clients Say</h2>
+      <div class="row g-4">
+
+        <!-- Testimonial 1 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="p-4 bg-black border border-secondary rounded shadow-sm h-100">
+            <div class="mb-3 text-warning">
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="mb-4 fst-italic">
+              "The best web developer I’ve worked with. Eliseo took my rough ideas and turned them into a sleek, high-end site that actually performs. 100% custom. 100% worth it."
+            </p>
+            <h6 class="fw-bold mb-0">— Jason M.</h6>
+            <small class="text-muted">Founder, DetailPro Studios</small>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="p-4 bg-black border border-secondary rounded shadow-sm h-100">
+            <div class="mb-3 text-warning">
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="mb-4 fst-italic">
+              "Professional, fast, and extremely creative. Eliseo doesn't just build websites, he builds brands. Highly recommended for anyone serious about standing out."
+            </p>
+            <h6 class="fw-bold mb-0">— Nicole R.</h6>
+            <small class="text-muted">Owner, Luxe Auto Care</small>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="p-4 bg-black border border-secondary rounded shadow-sm h-100">
+            <div class="mb-3 text-warning">
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star me-1"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p class="mb-4 fst-italic">
+              "Eliseo’s custom code approach made all the difference. My site loads faster, looks better, and reflects the premium quality of my services."
+            </p>
+            <h6 class="fw-bold mb-0">— Steven T.</h6>
+            <small class="text-muted">CEO, Elite Detailers</small>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<!-- Contact Section -->
+<section id="contact" class="hero-section d-flex align-items-center justify-content-center text-center bg-black text-white">
+  <div>
+    <h2 class="main-title mb-4" data-aos="fade-up">Let’s Build Something Elite</h2>
+    <p class="lead mb-4 px-3 px-md-5" data-aos="fade-up" data-aos-delay="100">
+      Whether you’re ready to launch or just exploring, I’d love to hear your ideas. Let’s turn them into reality — with code that sets you apart.
+    </p>
+    <div data-aos="fade-up" data-aos-delay="200">
+      <a href="mailto:eliseowebdev@gmail.com" class="btn btn-light btn-lg text-black me-3">Email Me</a>
+      <a href="tel:682-215-3934" class="btn btn-outline-light btn-lg">Call Now</a>
+    </div>
+  </div>
+</section>
+ <!-- Footer with Logo -->
+  <footer class="bg-black text-white py-4">
+    <div class="container text-center">
+      <img src="assets/logo.png" alt="Eliseo Web Dev" height="50" class="mb-2">
+      <p class="mb-2 small">&copy; 2025 Eliseo Web Dev. All rights reserved.</p>
+      <div class="d-flex justify-content-center gap-4">
+        <a href="eliseowebdev@gmail.com" class="text-white text-decoration-none">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="tel:682-215-3934" class="text-white text-decoration-none">
+          <i class="fas fa-phone"></i>
+        </a>
+        <a href="https://www.instagram.com/eliseowebdev" target="_blank" class="text-white text-decoration-none">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+<script>
+  $(document).ready(function(){
+    $('.services-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: true,
+      arrows: true,
+      dots: true,
+      swipeToSlide: true,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+          }
+        }
+      ]
+    });
+  });
+</script>
+
+  <!-- Bootstrap Bundle JS (with Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: 'ease-in-out',
+    });
+  </script>
+
+</body>
+</html>
