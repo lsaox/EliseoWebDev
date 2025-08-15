@@ -257,3 +257,9 @@ video::-webkit-media-controls-start-playback-button {
   display: none !important;
   -webkit-appearance: none;
 }
+.pt-6 {
+  padding-top: 8rem !important;
+}
+.pb-6 {
+  padding-bottom: 8rem !important;
+}
