@@ -94,7 +94,14 @@
       height: 60px;
     }
   }
-  
+  /* Pricing section custom spacing and subtle gradient */
+.pricing-section {
+  padding-top: 120px; /* Adjust as needed */
+  padding-bottom: 80px;
+  background: linear-gradient(to bottom, #000000, #0a0a0a);
+  position: relative;
+}
+
 </style>
   <style>
     body {
@@ -263,6 +270,99 @@
 </section>
 
 
+<!-- Packages / Pricing Section -->
+<section id="pricing" class="pricing-section bg-black text-white position-relative">
+  <div class="container text-center">
+    <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Website Packages</h2>
+    <p class="lead text-secondary mb-5" data-aos="fade-up" data-aos-delay="100">
+      Choose a plan based on your business goals — whether you're starting fresh or scaling big. All packages are custom-built, mobile-friendly, and performance-optimized.
+    </p>
+
+    <div class="row g-4">
+
+      <!-- Basic Package -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="fw-bold mb-3 text-light">Basic</h4>
+            <p class="text-secondary mb-3">Perfect for portfolios, resumes, or launch pages.</p>
+            <ul class="list-unstyled text-start small text-secondary mb-3">
+              <li>✔ 1 Custom-built page</li>
+              <li>✔ Mobile responsive design</li>
+              <li>✔ Custom layout & colors</li>
+              <li>✔ Contact form integration</li>
+              <li>✔ Fast load speeds</li>
+              <li>✔ Domain connection</li>
+              <li>✔ Google indexing ready</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
+        </div>
+      </div>
+
+      <!-- Standard Package -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="fw-bold mb-3 text-light">Standard</h4>
+            <p class="text-secondary mb-3">Great for small businesses or growing brands.</p>
+            <ul class="list-unstyled text-start small text-secondary mb-3">
+              <li>✔ Up to 4 custom pages</li>
+              <li>✔ Mobile-first design</li>
+              <li>✔ Smooth scroll effects</li>
+              <li>✔ Contact form with email routing</li>
+              <li>✔ Social media integration</li>
+              <li>✔ Basic SEO optimization</li>
+              <li>✔ Google Analytics setup</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
+        </div>
+      </div>
+
+      <!-- Pro Package -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+        <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="fw-bold mb-3 text-light">Pro</h4>
+            <p class="text-secondary mb-3">Ideal for established businesses wanting stronger brand presence.</p>
+            <ul class="list-unstyled text-start small text-secondary mb-3">
+              <li>✔ 5–8 fully custom pages</li>
+              <li>✔ Logo & brand asset design</li>
+              <li>✔ Image galleries or sliders</li>
+              <li>✔ Advanced animations (AOS, parallax)</li>
+              <li>✔ Newsletter or form integration</li>
+              <li>✔ SEO-optimized structure</li>
+              <li>✔ Mobile & tablet refinement</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
+        </div>
+      </div>
+
+      <!-- Ultimate Package -->
+      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+        <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column justify-content-between">
+          <div>
+            <h4 class="fw-bold mb-3 text-light">Ultimate</h4>
+            <p class="text-secondary mb-3">For elite businesses that need it all — and more.</p>
+            <ul class="list-unstyled text-start small text-secondary mb-3">
+              <li>✔ 10+ custom pages</li>
+              <li>✔ Complete branding kit (logo, icons, etc.)</li>
+              <li>✔ Interactive features (JS sliders, carousels)</li>
+              <li>✔ Copywriting assistance</li>
+              <li>✔ Full SEO optimization & metadata</li>
+              <li>✔ Email marketing setup (Mailchimp, etc.)</li>
+              <li>✔ Ongoing support & revisions</li>
+            </ul>
+          </div>
+          <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 
 
@@ -458,35 +558,6 @@
     </div>
   </footer>
 
-
-  
-<script>
-  $(document).ready(function(){
-    $('.services-slider').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      infinite: true,
-      arrows: true,
-      dots: true,
-      swipeToSlide: true,
-      responsive: [
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
-          }
-        },
-        {
-          breakpoint: 576,
-          settings: {
-            slidesToShow: 1,
-          }
-        }
-      ]
-    });
-  });
-</script>
-
   <!-- Bootstrap Bundle JS (with Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -494,7 +565,7 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({
-      duration: 800,
+      duration: 400,
       once: true,
       easing: 'ease-in-out',
     });
