@@ -67,13 +67,13 @@
   #introSplash h1 {
     opacity: 0;
     transform: translateY(20px);
-    animation: fadeUp 0.6s ease forwards;
+    animation: fadeUp 0.3s ease forwards;
   }
 
   #introSplash h1 {
     font-size: 3rem;
     margin-top: 20px;
-    animation-delay: 0.6s;
+    animation-delay: 0.3s;
   }
 
   @keyframes fadeUp {
@@ -85,7 +85,7 @@
 
   /* Fade out the entire splash */
   .fade-out {
-    animation: fadeOutSplash 0.5s ease forwards;
+    animation: fadeOutSplash 0.2s ease forwards;
   }
 
   @keyframes fadeOutSplash {
@@ -131,38 +131,62 @@
   window.addEventListener('load', () => {
     const splash = document.getElementById('introSplash');
 
-    // Wait until fade-in finishes + pause, then fade out
-    setTimeout(() => {
-      splash.classList.add('fade-out');
-    }, 2200); // total time: 0.6s logo + 0.6s text + 1s pause
+setTimeout(() => {
+  splash.classList.add('fade-out');
+}, 1200); // 1.2 seconds instead of 2.2
 
-    // Remove splash from DOM after fade out
-    setTimeout(() => {
-      splash.remove();
-    }, 2800);
+setTimeout(() => {
+  splash.remove();
+}, 1400); // 0.2 seconds after fade-out starts
+
   });
 </script>
 
 <body class="bg-black text-white">
 
-  <nav class="navbar navbar-dark fixed-top " style="margin-top:40px;">
-    <div class="container">
-      <a class="navbar-brand" href="#">
-        <img src="assets/logo.png" alt="Eliseo Web Dev" height="50">
-      </a>
-      <button class="btn btn-outline-light d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="d-none d-lg-flex mx-auto">
-        <ul class="navbar-nav d-flex flex-row justify-content-center">
-          <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="100"><a class="nav-link" href="#">Home</a></li>
-          <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="200"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="300"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-          <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="400"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
+<nav class="navbar navbar-dark fixed-top" style="margin-top:40px; position: relative;">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="assets/logo.png" alt="Eliseo Web Dev" height="50" />
+    </a>
+    <button
+      class="btn btn-outline-light d-lg-none"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#mobileMenu"
+      aria-controls="mobileMenu"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="d-none d-lg-flex mx-auto">
+      <ul class="navbar-nav d-flex flex-row justify-content-center">
+       
+        <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="200">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="300">
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+        </li>
+          <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="400">
+          <a class="nav-link" href="#pricing">Packages</a>
+        </li>
+        <li class="nav-item mx-3" data-aos="fade-down" data-aos-delay="400">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+       
+      </ul>
     </div>
-  </nav>
+
+    <!-- Phone Text on top right -->
+    <div
+      class="d-none d-lg-flex align-items-center"
+      style="position: absolute; top: 10px; right: 20px; color: white; font-weight: 500; font-family: 'Orbitron', sans-serif; cursor: pointer;"
+    >
+      <i class="fas fa-phone-alt me-2"></i>
+      <a href="tel:682-215-3934" style="color: white; text-decoration: none;">Text</a>
+    </div>
+  </div>
+</nav>
 
 
   <!-- Offcanvas Mobile Menu -->
@@ -185,7 +209,7 @@
   <div class="video-background">
     <video autoplay muted loop playsinline>
       <source src="assets/hero.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
+
     </video>
     <div class="video-overlay"></div>
   </div>
@@ -280,99 +304,7 @@
 </section>
 
 
-<!-- Packages / Pricing Section -->
-<section id="pricing" class="pricing-section bg-black text-white position-relative">
-  <div class="container text-center">
-    <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Website Packages</h2>
-    <p class="lead text-secondary mb-5" data-aos="fade-up" data-aos-delay="100">
-      Choose a plan based on your business goals — whether you're starting fresh or scaling big. All packages are custom-built, mobile-friendly, and performance-optimized.
-    </p>
 
-    <div class="row g-4">
-
-      <!-- Basic Package -->
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
-        <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column justify-content-between">
-          <div>
-            <h4 class="fw-bold mb-3 text-light">Basic</h4>
-            <p class="text-secondary mb-3">Perfect for portfolios, resumes, or launch pages.</p>
-            <ul class="list-unstyled text-start small text-secondary mb-3">
-              <li>✔ 1 Custom-built page</li>
-              <li>✔ Mobile responsive design</li>
-              <li>✔ Custom layout & colors</li>
-              <li>✔ Contact form integration</li>
-              <li>✔ Fast load speeds</li>
-              <li>✔ Domain connection</li>
-              <li>✔ Google indexing ready</li>
-            </ul>
-          </div>
-          <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
-        </div>
-      </div>
-
-      <!-- Standard Package -->
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
-        <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column justify-content-between">
-          <div>
-            <h4 class="fw-bold mb-3 text-light">Standard</h4>
-            <p class="text-secondary mb-3">Great for small businesses or growing brands.</p>
-            <ul class="list-unstyled text-start small text-secondary mb-3">
-              <li>✔ Up to 4 custom pages</li>
-              <li>✔ Mobile-first design</li>
-              <li>✔ Smooth scroll effects</li>
-              <li>✔ Contact form with email routing</li>
-              <li>✔ Social media integration</li>
-              <li>✔ Basic SEO optimization</li>
-              <li>✔ Google Analytics setup</li>
-            </ul>
-          </div>
-          <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
-        </div>
-      </div>
-
-      <!-- Pro Package -->
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
-        <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column justify-content-between">
-          <div>
-            <h4 class="fw-bold mb-3 text-light">Pro</h4>
-            <p class="text-secondary mb-3">Ideal for established businesses wanting stronger brand presence.</p>
-            <ul class="list-unstyled text-start small text-secondary mb-3">
-              <li>✔ 5–8 fully custom pages</li>
-              <li>✔ Logo & brand asset design</li>
-              <li>✔ Image galleries or sliders</li>
-              <li>✔ Advanced animations (AOS, parallax)</li>
-              <li>✔ Newsletter or form integration</li>
-              <li>✔ SEO-optimized structure</li>
-              <li>✔ Mobile & tablet refinement</li>
-            </ul>
-          </div>
-          <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
-        </div>
-      </div>
-
-      <!-- Ultimate Package -->
-      <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
-        <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column justify-content-between">
-          <div>
-            <h4 class="fw-bold mb-3 text-light">Ultimate</h4>
-            <p class="text-secondary mb-3">For elite businesses that need it all — and more.</p>
-            <ul class="list-unstyled text-start small text-secondary mb-3">
-              <li>✔ 10+ custom pages</li>
-              <li>✔ Complete branding kit (logo, icons, etc.)</li>
-              <li>✔ Interactive features (JS sliders, carousels)</li>
-              <li>✔ Copywriting assistance</li>
-              <li>✔ Full SEO optimization & metadata</li>
-              <li>✔ Email marketing setup (Mailchimp, etc.)</li>
-              <li>✔ Ongoing support & revisions</li>
-            </ul>
-          </div>
-          <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 
 
@@ -427,7 +359,130 @@
 
   </div>
 </section>
+<!-- Packages / Pricing Section -->
+<!-- Packages / Pricing Section -->
+<section id="pricing" class="pricing-section bg-black text-white position-relative">
+  <div class="container text-center">
+    <h2 class="display-5 fw-bold mb-5" data-aos="fade-up">Website Packages</h2>
+    <p class="lead text-secondary mb-5" data-aos="fade-up" data-aos-delay="100">
+      Choose a plan based on your business goals — whether you're starting fresh or scaling big. All packages are custom-built, mobile-friendly, and performance-optimized.
+    </p>
 
+    <div class="row g-4 justify-content-center">
+
+<!-- One Pager Package -->
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+  <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column">
+    <div>
+      <h4 class="fw-bold mb-3 text-light">One Pager</h4>
+      <p class="text-secondary mb-3">Simple, clean single-page websites — perfect for portfolios or basic needs</p>
+      <ul class="list-unstyled text-start small text-secondary mb-3">
+                <li>✔ Great for Porfolios</li>
+        <li>✔ Custom-coded single-page design</li>
+        <li>✔ Mobile-first responsive layout</li>
+        <li>✔ SEO basics included</li>
+        <li>✔ Fast load times & performance optimization</li>
+        <li>✔ Contact form & basic analytics setup</li>
+        <li>✔ Social media integration</li>
+      </ul>
+    </div>
+
+    <p class="fw-bold text-light mt-auto">Pricing: $500</p>
+    <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
+  </div>
+</div>
+
+<!-- Starter Package -->
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+  <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column">
+    <div>
+      <h4 class="fw-bold mb-3 text-light">Starter</h4>
+      <p class="text-secondary mb-3">1-4 Page Website — Clean, Custom-Coded & Mobile-Friendly</p>
+      <ul class="list-unstyled text-start small text-secondary mb-3">
+        <li>✔ Up to 4 fully custom pages</li>
+        <li>✔ SEO-optimized content & structure</li>
+        <li>✔ Clean, hand-coded HTML/CSS/JS</li>
+        <li>✔ User-focused, intuitive UX design</li>
+        <li>✔ Mobile-first responsive layout</li>
+        <li>✔ Fast load times & performance optimization</li>
+        <li>✔ Basic social media integration</li>
+      </ul>
+    </div>
+
+    <p class="fw-bold text-light mt-auto">Pricing: $1500</p>
+    <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
+  </div>
+</div>
+
+<!-- Growth Package -->
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+  <div class="border border-secondary rounded p-4 h-100 bg-dark d-flex flex-column">
+    <div>
+      <h4 class="fw-bold mb-3 text-light">Growth</h4>
+      <p class="text-secondary mb-3">5-9 pages — Ideal for growing businesses with more content needs</p>
+ <ul class="list-unstyled text-start small text-secondary mb-3">
+  <li>✔ 5-9 custom-designed pages</li>
+  <li>✔ SEO & keyword optimization</li>
+  <li>✔ Newsletter & lead capture integration</li>
+  <li>✔ Social media integration</li>
+  <li>✔ Performance & speed enhancements</li>
+  <li>✔ Branding package: logo designs and QR Codes </li>
+  <li>✔ Conversion rate optimization</li>
+  <li>✔ Monthly performance reports & analytics review</li>
+    <li>✔ Google Business Account Creation / Verification</li>
+</ul>
+    </div>
+
+    <p class="fw-bold text-light mt-auto">Pricing: $2,500</p>
+    <a href="#contact" class="btn btn-outline-light mt-4">Select Package</a>
+  </div>
+</div>
+
+<!-- Elite & Enterprise Package -->
+<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="500">
+  <div class="border border-warning rounded p-4 h-100 bg-gradient d-flex flex-column" style="background: linear-gradient(135deg, #1f1f1f, #111111); border-color: gold !important;">
+    <div>
+      <h4 class="fw-bold mb-3 text-warning">Elite & Enterprise</h4>
+      <p class="text-warning mb-3">10+ pages — Custom solutions for established brands and enterprises</p>
+      <ul class="list-unstyled text-start small text-warning mb-3">
+        <li>✔ Everything in Growth, plus:</li>
+        <li>✔ Advanced branding package: logo design, business cards, shirts, QR codes</li>
+        <li>✔ Marketing & ad campaign support</li>
+        <li>✔ Advanced integrations & e-commerce</li>
+        <li>✔ Dedicated account management</li>
+        <li>✔ Priority support & custom solutions</li>
+      </ul>
+    </div>
+
+    <p class="fw-bold text-warning mt-auto">Pricing: Contact us for a custom quote</p>
+    <a href="#contact" class="btn btn-outline-warning mt-4">Contact Us</a>
+  </div>
+</div>
+
+
+
+    <!-- Retainer Pricing -->
+    <div class="mt-5" data-aos="fade-up" data-aos-delay="600" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+      <h3 class="fw-bold mb-3">Monthly Retainer </h3>
+      <p class="text-secondary mb-3">
+        For businesses needing ongoing design, advertising, and web development support, our all-in-one monthly retainer offers:
+      </p>
+      <ul class="list-unstyled text-start small text-secondary mb-3">
+        <li>✔ Website Creation Included (minimum 2 month Retainer)</li>
+        <li>✔ Dedicated graphic design & branding services</li>
+        <li>✔ Ads creation and management (Google, Facebook, Instagram)</li>
+        <li>✔ Website updates, optimizations & new features</li>
+        <li>✔ Social media content creation & scheduling</li>
+        <li>✔ Monthly strategy & performance reports</li>
+        <li>✔ Priority access to support and consultations</li>
+        <li>✔ All online Presence Management Taken Care of</li>
+      </ul>
+      <p class="fs-3 fw-bold">$2,500 <small class="fs-6">per month</small></p>
+      <a href="#contact" class="btn btn-outline-light mt-3">Get Started</a>
+    </div>
+
+  </div>
+</section>
 
 
 
