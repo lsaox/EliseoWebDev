@@ -149,14 +149,25 @@
     <input type="tel" class="form-control" id="phone" name="phone" placeholder="Required: (123) 456-7890">
   </div>
 
+  <!-- Budget Dropdown Field -->
+  <div class="mb-3">
+    <label for="budget" class="form-label">Estimated Budget *</label>
+    <select class="form-control" id="budget" name="budget" required>
+      <option value="" disabled selected>Select a range</option>
+      <option value="500-1000">$500 – $1,000</option>
+      <option value="1000-3000">$1,000 – $3,000</option>
+      <option value="3000-5000">$3,000 – $5,000</option>
+      <option value="5000+">$5,000+</option>
+    </select>
+  </div>
+
   <div class="mb-3">
     <label for="message" class="form-label">Project Details *</label>
-    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell me about your project as detailed as possible..." required></textarea>
   </div>
 
   <button type="submit" class="btn btn-custom btn-lg mt-2">Send Message</button>
 </form>
-
 
       </div>
     </div>
