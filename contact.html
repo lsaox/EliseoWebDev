@@ -149,7 +149,6 @@
     <input type="tel" class="form-control" id="phone" name="phone" placeholder="Required: (123) 456-7890">
   </div>
 
-  <!-- Budget Dropdown Field -->
   <div class="mb-3">
     <label for="budget" class="form-label">Estimated Budget *</label>
     <select class="form-control" id="budget" name="budget" required>
@@ -162,9 +161,23 @@
   </div>
 
   <div class="mb-3">
+    <label for="timeline" class="form-label">Preferred Timeline *</label>
+    <select class="form-control" id="timeline" name="timeline" required>
+      <option value="" disabled selected>Select an option</option>
+      <option value="ASAP">ASAP</option>
+      <option value="1-2 weeks">1–2 weeks</option>
+      <option value="3-4 weeks">3–4 weeks</option>
+      <option value="1-2 months">1–2 months</option>
+      <option value="Flexible">Flexible</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
     <label for="message" class="form-label">Project Details *</label>
     <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell me about your project as detailed as possible..." required></textarea>
   </div>
+
+  <!-- Google reCAPTCHA -->
 
   <button type="submit" class="btn btn-custom btn-lg mt-2">Send Message</button>
 </form>
@@ -215,6 +228,7 @@
    aria-label="Call Eliseo Web Dev">
   <i class="fas fa-phone fa-lg"></i>
 </a>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <!-- Bootstrap Bundle JS (with Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
